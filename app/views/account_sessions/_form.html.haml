@@ -1,0 +1,10 @@
+%h1 Sessions#new
+= form_tag account_sessions_path, method: :post do
+  .div
+    = label_tag :login
+    = text_field_tag :login
+  .div
+    = label_tag :password
+    = password_field_tag :password
+  .div
+    = submit_tag "Login"
