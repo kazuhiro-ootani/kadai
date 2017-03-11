@@ -1,4 +1,6 @@
 class AccountSessionsController < ApplicationController
+  skip_before_action :require_login, except: [:destory]
+
   def new
     @account = Account.new
   end

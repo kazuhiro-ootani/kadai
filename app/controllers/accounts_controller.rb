@@ -1,5 +1,6 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: [:show, :edit, :update, :destroy]
+  skip_before_action :require_login, only: [:index, :new, :create]
 
   # GET /accounts
   def index
