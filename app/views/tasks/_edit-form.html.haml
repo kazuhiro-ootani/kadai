@@ -1,0 +1,20 @@
+= form_for @task do |f|
+  - if @task.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@task.errors.count, "件のエラーがあります。")}"
+      %ul
+        - @task.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    タイトル
+  .actions
+    = f.text_field :title, placeholder:'タイトル'
+  .actions
+    本文
+  .actions
+    = f.text_field :content, placeholder:'本文'
+
+  .actions
+    = f.submit '編集する'
+

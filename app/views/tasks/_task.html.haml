@@ -5,3 +5,4 @@
     .task-content
       = task.content.truncate(13)
     .task-footer
+      = link_to '編集', edit_task_path(task.id)
