@@ -1,0 +1,22 @@
+.task-list{
+  border: solid;
+  border-color: black;
+  display: inline-block;
+  position: relative;
+  height: 150px;
+  width: 400px;
+
+  .task-title{
+    text-align: center;
+  }
+  .task-content{
+    margin-top: 10px;
+  }
+  .task-footer{
+    position: absolute;
+    bottom: 5px;
+  }
+}
+.task-new{
+  display: inline-block;
+}
