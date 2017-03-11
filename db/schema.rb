@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309171913) do
+ActiveRecord::Schema.define(version: 20170310102008) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "login",           limit: 40, null: false
@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20170309171913) do
 
   create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "account_id"
-    t.string   "title"
-    t.text     "content",    limit: 65535
-    t.boolean  "finished"
-    t.integer  "priority"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "title",                                    null: false
+    t.text     "content",    limit: 65535,                 null: false
+    t.boolean  "finished",                 default: false, null: false
+    t.integer  "priority",                                 null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.index ["account_id"], name: "index_tasks_on_account_id", using: :btree
   end
 
