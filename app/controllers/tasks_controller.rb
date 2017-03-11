@@ -3,7 +3,8 @@ class TasksController < ApplicationController
 
   # GET /tasks
   def index
-    @tasks = Task.all
+    @toptask = Task.last
+    @tasks = Task.limit(10)
   end
 
   # GET /tasks/1
@@ -25,7 +26,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
+        format.html { redirect_to tasks_path, notice: 'タスクを作成しました' }
       else
         format.html { render :new }
       end
@@ -59,6 +60,7 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.fetch(:task, {})
+      params.fetch(:task, {}).permit(:title, :content, :priority).merge(account_id:current_user.id)
     end
+
 end
