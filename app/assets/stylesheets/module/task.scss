@@ -1,22 +1,33 @@
-.task-list{
+.task-list-new{
   border: solid;
   border-color: black;
   display: inline-block;
   position: relative;
-  height: 150px;
-  width: 400px;
-
-  .task-title{
-    text-align: center;
-  }
-  .task-content{
-    margin-top: 10px;
-  }
-  .task-footer{
-    position: absolute;
-    bottom: 5px;
-  }
+  height: 100px;
+  width: 200px;
+  margin: 20px 0 20px 0;
 }
+
+.task-title{
+  text-align: center;
+}
+.task-content{
+  margin-top: 10px;
+}
+.task-footer{
+  position: absolute;
+  bottom: 5px;
+}
+
 .task-new{
   display: inline-block;
+}
+
+.task-list{
+  border: solid;
+  border-color: black;
+  position: relative;
+  height: 100px;
+  width: 200px;
+  margin: 20px 0 20px 0;
 }
