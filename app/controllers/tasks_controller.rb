@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   def index
     @toptask = Task.last
-    @tasks = Task.limit(10)
+    @tasks = Task.order('priority ASC').limit(10)
   end
 
   # GET /tasks/1

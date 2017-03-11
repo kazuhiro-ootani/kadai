@@ -1,29 +1,15 @@
 %h1 タスク一覧
 
-
-.task-list
+.task-list-new
   .task-title
-    = @toptask.title
+    = @toptask.title.truncate(13)
   .task-content
-    = @toptask.content
+    = @toptask.content.truncate(13)
   .task-footer
 .task-new
   ←New!
 
-%table
-  %thead
-    %tr
-      %th
-      %th
-      %th
-
-  %tbody
-    - @tasks.each do |task|
-      %tr
-        %td= task.title
-        %td= link_to 'Show', task
-        %td= link_to 'Edit', edit_task_path(task)
-        %td= link_to 'Destroy', task, :method => :delete, :data => { :confirm => 'Are you sure?' }
+= render partial: 'task', collection: @tasks
 
 %br
 

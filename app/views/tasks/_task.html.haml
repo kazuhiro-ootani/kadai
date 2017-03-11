@@ -1,0 +1,7 @@
+- if task.finished == false
+  .task-list
+    .task-title
+      = task.title.truncate(13)
+    .task-content
+      = task.content.truncate(13)
+    .task-footer
