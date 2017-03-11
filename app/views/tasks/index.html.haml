@@ -6,6 +6,7 @@
   .task-content
     = @toptask.content.truncate(13)
   .task-footer
+    =link_to '編集', edit_task_path(@toptask.id)
 .task-new
   ←New!
 
