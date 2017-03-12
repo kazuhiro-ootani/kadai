@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   def index
     @toptask = Task.last
     @tasks = Task.order('priority ASC').limit(10)
+
   end
 
   # GET /tasks/1
@@ -37,7 +38,11 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
-        format.html { redirect_to tasks_path, notice: 'タスクを編集しました' }
+        if params[:task].nil?
+          format.html { redirect_to tasks_path, notice: 'タスクを編集しました' }
+        else
+          format.html { redirect_to tasks_path, notice: 'タスクを完了しました' }
+        end
       else
         format.html { render :edit }
       end
@@ -60,7 +65,7 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.fetch(:task, {}).permit(:title, :content, :priority).merge(account_id:current_user.id)
+      params.fetch(:task, {}).permit(:title, :content, :priority, :finished).merge(account_id:current_user.id)
     end
 
 end

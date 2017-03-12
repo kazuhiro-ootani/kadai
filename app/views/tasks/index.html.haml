@@ -1,12 +1,15 @@
 %h1 タスク一覧
-
 .task-list-new
   .task-title
     = @toptask.title.truncate(13)
   .task-content
     = @toptask.content.truncate(13)
   .task-footer
-    =link_to '編集', edit_task_path(@toptask.id)
+    = link_to '編集', edit_task_path(@toptask.id)
+    .task-complete
+      = form_for(@toptask) do |f|
+        = f.hidden_field :finished, value: "true"
+        = f.submit "完了", notice: "もも"
 .task-new
   ←New!
 

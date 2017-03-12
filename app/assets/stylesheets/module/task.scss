@@ -17,6 +17,11 @@
 .task-footer{
   position: absolute;
   bottom: 5px;
+
+  .task-complete{
+    display: inline-block;
+    margin-left: 120px;
+  }
 }
 
 .task-new{
