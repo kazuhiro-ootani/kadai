@@ -14,7 +14,7 @@ describe Task do
     end
 
     it "is invalid without a content" do
-      task =build(:task, content: nil)
+      task = build(:task, content: nil)
       task.valid?
       expect(task.errors[:content]).to include("を入力してください")
     end
