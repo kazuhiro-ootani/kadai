@@ -38,10 +38,10 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
-        if params[:task].nil?
-          format.html { redirect_to tasks_path, notice: 'タスクを編集しました' }
-        else
+        if params[:task][:finished] == "true"
           format.html { redirect_to tasks_path, notice: 'タスクを完了しました' }
+        else
+          format.html { redirect_to tasks_path, notice: 'タスクを編集しました' }
         end
       else
         format.html { render :edit }

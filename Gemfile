@@ -42,8 +42,10 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
-  gem 'rspec-rails', "~> 3.1.0"
+  gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'rails-controller-testing'
+  gem 'capybara'
 end
 
 group :development do
@@ -61,6 +63,5 @@ gem 'sorcery'
 gem 'rails-i18n'
 gem 'faker'
 gem 'rake', '< 11.0'
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
