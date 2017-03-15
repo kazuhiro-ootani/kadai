@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310102008) do
+ActiveRecord::Schema.define(version: 20170315021835) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "login",           limit: 40, null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170310102008) do
     t.integer  "priority",                                 null: false
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
+    t.integer  "row_order"
     t.index ["account_id"], name: "index_tasks_on_account_id", using: :btree
   end
 

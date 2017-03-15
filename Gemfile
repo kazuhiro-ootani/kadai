@@ -63,5 +63,8 @@ gem 'sorcery'
 gem 'rails-i18n'
 gem 'faker'
 gem 'rake', '< 11.0'
+gem 'ranked-model'
+gem 'jquery-ui-rails'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
