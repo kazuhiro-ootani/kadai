@@ -9,11 +9,12 @@
     .task-complete
       = form_for(@toptask) do |f|
         = f.hidden_field :finished, value: "true"
-        = f.submit "完了", notice: "もも"
+        = f.submit "完了"
 .task-new
   ←New!
-
-= render partial: 'task', collection: @tasks
+%table.table.table-bordered.table-sortable
+  %tbody
+    = render partial: 'task', collection: @tasks
 
 %br
 

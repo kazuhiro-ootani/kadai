@@ -6,21 +6,23 @@
   height: 100px;
   width: 200px;
   margin: 20px 0 20px 0;
-}
 
-.task-title{
-  text-align: center;
-}
-.task-content{
-  margin-top: 10px;
-}
-.task-footer{
-  position: absolute;
-  bottom: 5px;
+  .task-title{
+    text-align: center;
+  }
 
-  .task-complete{
-    display: inline-block;
-    margin-left: 120px;
+  .task-content{
+    margin-top: 10px;
+  }
+
+  .task-footer{
+    position: absolute;
+    bottom: 5px;
+
+    .task-complete{
+      display: inline-block;
+      margin-left: 120px;
+    }
   }
 }
 
@@ -28,11 +30,8 @@
   display: inline-block;
 }
 
-.task-list{
-  border: solid;
-  border-color: black;
-  position: relative;
+table, tr,td{
   height: 100px;
-  width: 200px;
-  margin: 20px 0 20px 0;
+  border: solid;
+  border-collapse: collapse;
 }
