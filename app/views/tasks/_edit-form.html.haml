@@ -6,15 +6,18 @@
         - @task.errors.full_messages.each do |msg|
           %li= msg
 
+  .edit-title-empty
   .actions
     タイトル
   .actions
-    = f.text_field :title, placeholder:'タイトル'
+    = f.text_field :title, placeholder:'タイトル', class: "edit-title-form"
+
+  .edit-content-empty
   .actions
     本文
   .actions
-    = f.text_field :content, placeholder:'本文'
+    = f.text_field :content, placeholder:'本文', class: "edit-content-form"
 
   .actions
-    = f.submit '編集する'
+    = f.submit '編集する', class: 'edit-task_submit'
 
