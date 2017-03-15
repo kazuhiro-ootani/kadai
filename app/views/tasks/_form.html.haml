@@ -6,10 +6,13 @@
         - @task.errors.full_messages.each do |msg|
           %li= msg
 
+  #title-empty
   .actions
     タイトル
   .actions
     = f.text_field :title, placeholder:'タイトル'
+
+  #content-empty
   .actions
     本文
   .actions
@@ -17,5 +20,5 @@
   .actions
     = f.select :priority, [['優先度1', 1], ['優先度2', 2], ['優先度3', 3]]
   .actions
-    = f.submit '作成'
+    = f.submit '作成', id: 'task_submit'
 
