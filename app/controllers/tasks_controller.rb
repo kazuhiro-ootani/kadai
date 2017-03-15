@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   def index
     @toptask = Task.last
-    @tasks = Task.order('priority ASC').limit(10)
+    @tasks = Task.rank(:row_order)
 
   end
 
@@ -57,6 +57,13 @@ class TasksController < ApplicationController
     end
   end
 
+  def sort
+    task = Task.find(params[:task_id])
+    task.update(task_params)
+    render nothing: true
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
@@ -65,7 +72,7 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.fetch(:task, {}).permit(:title, :content, :priority, :finished).merge(account_id:current_user.id)
+      params.fetch(:task, {}).permit(:title, :content, :priority, :finished,:row_order_position).merge(account_id:current_user.id)
     end
 
 end

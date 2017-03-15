@@ -1,12 +1,12 @@
 - if task.finished == false
-  .task-list
-    .task-title
+  %tr.task-list.item{ data: { model_name: task.class.name.underscore, update_url: task_sort_path(task) }}
+    %td.task-title
       = task.title.truncate(13)
-    .task-content
+    %td.task-content
       = task.content.truncate(13)
-    .task-footer
+    %td.task-footer
       = link_to '編集', edit_task_path(task.id)
-      .task-complete
+      %td.task-complete
         = form_for(task) do |f|
           = f.hidden_field :finished, value: "true"
           = f.submit "完了"
