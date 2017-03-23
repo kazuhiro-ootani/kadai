@@ -45,9 +45,14 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
   gem 'rails-controller-testing'
-  gem 'capybara'
 end
 
+group :test do
+  gem 'poltergeist', '~> 1.5.1'
+  gem 'database_cleaner'
+  gem 'capybara', '~> 2.4.1'
+  gem 'selenium-webdriver'
+end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
